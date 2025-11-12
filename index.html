@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>    مُـخـتـلـف | هويتك الذكية </title>
   <style>
+    
     :root{
       --bg:#071028; /* dark navy */
       --card:#f8fafc;
@@ -50,6 +51,132 @@
   </style>
 </head>
 <body>
+  <!-- 📱 القائمة الجانبية للجوال + روابط التواصل -->
+<style>
+  /* 🔹 زر القائمة */
+  .menu-btn {
+    display: none;
+    font-size: 30px;
+    color: var(--card);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  @media (max-width: 720px) {
+    .menu-btn { display: block; }
+    .top-nav { display: none; } /* إخفاء الروابط الأصلية في الجوال */
+  }
+
+  /* 🔹 القائمة الجانبية */
+  .mobile-menu {
+    position: fixed;
+    top: 0; right: -280px;
+    width: 260px; height: 100vh;
+    background: linear-gradient(180deg, #0b1633, #061027);
+    box-shadow: -4px 0 20px rgba(0,0,0,0.4);
+    display: flex; flex-direction: column;
+    justify-content: space-between;
+    padding: 60px 20px 30px;
+    transition: right 0.35s ease;
+    z-index: 999;
+  }
+
+  .mobile-menu.active { right: 0; }
+
+  .mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    margin: 14px 0;
+    font-size: 17px;
+    transition: color 0.2s ease;
+  }
+
+  .mobile-menu a:hover { color: var(--accent); }
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(5px);
+    display: none;
+    z-index: 998;
+  }
+
+  .menu-overlay.active { display: block; }
+
+  /* 🔹 روابط التواصل */
+  .social-links {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 18px;
+  }
+
+  .social-links a {
+    font-size: 22px;
+    color: var(--card);
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .social-links a:hover {
+    color: var(--accent);
+    transform: scale(1.2);
+  }
+</style>
+
+<!-- ✅ أيقونات من Font Awesome -->
+<script src="https://kit.fontawesome.com/1e1e1e1e1e.js" crossorigin="anonymous"></script>
+
+<script>
+  // إنشاء زر ☰ في الهيدر
+  const header = document.querySelector('header');
+  const menuBtn = document.createElement('button');
+  menuBtn.className = 'menu-btn';
+  menuBtn.innerHTML = '☰';
+  header.prepend(menuBtn);
+
+  // إنشاء القائمة الجانبية
+  const mobileMenu = document.createElement('div');
+  mobileMenu.className = 'mobile-menu';
+  mobileMenu.innerHTML = `
+    <div>
+      <a href="about.html">عن مُختلِف</a>
+      <a href="features.html">المميزات</a>
+      <a href="how.html">شرح كيف يعمل</a>
+      <a href="faq.html">الأسئلة الشائعة</a>
+    </div>
+
+    <div class="social-links">
+      <a href="https://wa.me/9665XXXXXXXX" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/username" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/username" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.tiktok.com/@username" target="_blank"><i class="fab fa-tiktok"></i></a>
+    </div>
+  `;
+  document.body.appendChild(mobileMenu);
+
+  // إنشاء خلفية شفافة عند فتح القائمة
+  const overlay = document.createElement('div');
+  overlay.className = 'menu-overlay';
+  document.body.appendChild(overlay);
+
+  // التحكم في فتح وغلق القائمة
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    overlay.classList.toggle('active');
+  });
+
+  overlay.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+  });
+</script>
+
   <div class="container">
     <header>
       <div class="brand">
