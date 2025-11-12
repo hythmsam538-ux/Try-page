@@ -1,0 +1,470 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>    مُـخـتـلـف | هويتك الذكية </title>
+  <style>
+    :root{
+      --bg:#071028; /* dark navy */
+      --card:#f8fafc;
+      --accent:#06b6d4; /* teal */
+      --accent2:#7c3aed; /* purple */
+      --muted:#9aa7b6;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box;font-family: 'Segoe UI', Tahoma, Arial, sans-serif}
+    body{margin:0;background:linear-gradient(180deg,var(--bg) 0%, #021226 100%);color:var(--card);}
+    .container{max-width:1200px;margin:28px auto;padding:20px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;gap:14px;align-items:center}
+    .logo{width:64px;height:64px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#021226}
+    h1{margin:0;font-size:22px}
+    p.lead{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:14px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);position:relative}
+    .img{height:160px;border-radius:10px;background:#fff;display:flex;align-items:center;justify-content:center;color:#111;margin-bottom:10px;overflow:hidden}
+    .img img{width:100%;height:100%;object-fit:cover}
+    .title{font-weight:800;color:#e6eef8;margin-bottom:6px}
+    .meta{color:var(--muted);font-size:13px;margin-bottom:10px}
+    .specs{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .chip{background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;font-size:13px;color:var(--card)}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .btn{background:linear-gradient(90deg,var(--accent2),var(--accent));color:#021226;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:800}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--card)}
+    footer{margin-top:22px;color:var(--muted);text-align:center}
+
+    .badge{position:absolute;left:12px;top:12px;background:linear-gradient(90deg,var(--accent),var(--accent2));padding:6px 8px;border-radius:8px;color:#021226;font-weight:900;font-size:12px}
+
+    /* Modal styles */
+    .modal-overlay{position:fixed;inset:0;background:rgba(2,6,19,0.7);display:none;align-items:center;justify-content:center;z-index:999}
+    .modal{max-width:900px;width:90%;background:linear-gradient(180deg, #021226, #071028);padding:18px;border-radius:12px;box-shadow:0 20px 60px rgba(2,6,19,0.8);display:flex;gap:16px;align-items:center}
+    .modal .modal-img{flex:1;min-height:260px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:8px;background:#fff}
+    .modal .modal-img img{width:100%;height:100%;object-fit:contain}
+    .modal .modal-close{position:absolute;right:18px;top:14px;background:transparent;border:none;color:var(--card);font-size:22px;padding:6px;cursor:pointer}
+
+    @media (max-width:720px){.modal{flex-direction:column}.modal .modal-img{min-height:200px}}
+    @media (max-width:520px){.img{height:140px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">NFC</div>
+        <div>
+          <h1> مُـخـتـلـف | هويتك الذكية </h1>
+          <p class="lead">مش مجرد كارت ... 
+             لأنك مميز  صُممت هويتنا ،
+ اترك انطباع أول يدوم و غير طريقة  تعريفك  بنفسك </p>
+        </div>
+      </div>
+      <div style="text-align:left">
+<nav class="top-nav">
+  <a href="about.html">عن مُختلِف</a> 
+  <a href="features.html">المميزات </a>
+  <a href="how.html">شرح كيف يعمل </a>
+  <a href="faq.html">الأسئلة الشائعة </a>
+</nav>
+
+<style>
+  .top-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .top-nav a {
+    color: var(--card);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s ease;
+  }
+  .top-nav a:hover {
+    color: var(--accent);
+  }
+  @media (max-width:720px){
+    .top-nav {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+    }
+  }
+</style>
+      </div>
+    </header>
+    <!-- قسم المميزات -->
+<section class="features-intro">
+  <h2> مميزاتنا </h2>
+</section>
+
+<style>
+  /* خط جميل وأنيق */
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@600;700;800&display=swap');
+
+  .features-intro {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+
+  .features-intro h2 {
+font-family: 'Noto Kufi Arabic', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1px;
+    text-shadow: 0 0 8px rgba(124, 58, 237, 0.5),
+                 0 0 16px rgba(6, 182, 212, 0.4);
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+  }
+
+  .features-intro h2:hover {
+    transform: scale(1.04);
+    text-shadow: 0 0 14px rgba(124, 58, 237, 0.8),
+                 0 0 26px rgba(6, 182, 212, 0.6);
+  }
+</style>
+
+<section class="intro-cards">
+  <div class="intro-card">
+    <div class="icon">⭐</div>
+    <h3>يُميزك من أول لمسة</h3>
+    <p>كارت مُـختلِف يعكس حضورك فوراً! تصميم عصري وتقنية ذكية تُظهر هويتك باحترافية وأناقة.</p>
+  </div>
+
+  <div class="intro-card">
+    <div class="icon">⚡</div>
+    <h3>تواصلك أسهل وأسرع</h3>
+    <p>بلمسة واحدة فقط ، بمجرد ما تقرب الكارت من الجوال , تُشارك بياناتك وروابطك كلها فوراً مع أي شخص — بدون تطبيقات إضافية.</p>
+  </div>
+
+  <div class="intro-card">
+    <div class="icon">🏆</div>
+    <h3>ضمان أصلي وجودة عالية</h3>
+    <p>بطاقات مصنوعة بمعايير احترافية لضمان أداء ممتاز ومتانة تدوم طويلاً في كل استخدام.</p>
+  </div>
+
+  <div class="intro-card">
+    <div class="icon">♾️</div>
+    <h3>مدى الحياة بدون تجديد</h3>
+    <p>بطاقتك الذكية صالحة مدى الحياة دون رسوم شهرية أو اشتراكات — امتلكها مرة واستفد للأبد.</p>
+  </div>
+</section>
+<!-- قسم يتناسب مع الجميع -->
+<section class="for-all">
+  <h2> يتناسب مع كل من يسعى للتميّز بخطوة ذكية</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">👤</div>
+      <h3>الأفراد</h3>
+      <p>بطاقة ذكية تساعدك على مشاركة معلوماتك وشبكاتك بسهولة مع أصدقائك أو زملائك.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏪</div>
+      <h3>المحلات التجارية والمؤسسات</h3>
+      <p>اعرض منتجاتك وروابط متجرك، وشارك موقعك بلمسة واحدة على بطاقة ذكية أنيقة تجذب العملاء.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🍽️</div>
+      <h3>المطاعم والكافيهات</h3>
+      <p>شارك قائمة الطعام أو موقعك أو حساباتك مباشرة مع الزبائن بطريقة حديثة.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🚚</div>
+      <h3>المندوبين</h3>
+      <p>قدّم نفسك باحتراف وشارك كل بياناتك فورًا دون الحاجة لكروت ورقية.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏫</div>
+      <h3>مكاتب القبول والتسجيل</h3>
+      <p>أنجز التواصل بسرعة وسهولة مع الطلاب أو المتقدمين من خلال بطاقة ذكية واحدة.</p>
+    </div>
+
+    <div class="card">
+      <div class="icon">🕋</div>
+      <h3>الحج والعمرة</h3>
+<p>
+بطاقة ذكية ترافق المعتمر بخطوة أمان.
+تُسهل الوصول وتُعرّف بك بسرعة عند الحاجة،
+فتمنح راحة البال لك ولمن يهتم بأمرك.
+معها لن يتوه المعتمر، ولن يتأخر التواصل،
+وتبقى تجربتك أكثر أمانًا وتنظيمًا. لأن التفاصيل تصنع الثقة خلي مكتبك يظهر بأفضل صورة
+هوية ذكية تُظهر احتراف مكتبك      </p>   
+ </div>
+  </div>
+
+
+</section>
+
+<style>
+.for-all {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.for-all h2 {
+  font-family: 'Changa', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(124, 58, 237, 0.5),
+               0 0 20px rgba(6, 182, 212, 0.6);
+  margin-bottom: 40px;
+}
+
+.for-all .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+.for-all .card {
+  background-color: #0f172a;
+  border-radius: 16px;
+  padding: 25px;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.1);
+}
+
+.for-all .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+}
+
+.for-all .icon {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.for-all h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.for-all p {
+  color: #bfc6d2;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.for-all-text {
+  margin-top: 40px;
+  font-family: 'Changa', sans-serif;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.for-all-text span {
+  font-weight: 800;
+  background: linear-gradient(90deg, #facc15, #f97316);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+}
+</style>
+
+<style>
+  .intro-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+  }
+  .intro-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: center;
+    color: var(--card);
+    transition: all 0.3s ease;
+  }
+  .intro-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.05);
+    border-color: var(--accent);
+  }
+  .intro-card .icon {
+    font-size: 28px;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .intro-card h3 {
+    margin: 6px 0;
+    font-size: 18px;
+    color: #fff;
+  }
+  .intro-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+</style>
+<section class="for-all">
+  <h2>    البطاقات    </h2>
+    <section class="grid">
+
+      <!-- Product 1 -->
+      <div class="card">
+        <div class="badge">الأكثر مبيعا</div>
+        <div class="img"><img src="منتج اسود.png" alt="NTAG215 Pack 10"/></div>
+        <div class="title">NTAG215 — Pack 10</div>
+        <div class="meta">بطاقات PVC قابلة للبرمجة والطباعة — مناسبة لكروت العمل والربط السريع</div>
+        <div class="specs">
+          <div class="chip">NTAG215</div>
+          <div class="chip">CR80 30Mil</div>
+          <div class="chip">قابل للطباعة UV</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/9665XXXXXXXX?text=مرحبا%20أريد%20اطلب%20NTAG215%20Pack%2010">اطلب عبر واتساب</a>
+          <button class="btn ghost details">عرض</button>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="card">
+
+        <div class="img"><img src="منتج ازرق.png" alt="NTAG215 Pack 50"/></div>
+        <div class="title">NTAG215 — Pack 50</div>
+        <div class="meta">حزمة متوسطة للمشاريع الصغرة — جودة عالية وسطح للطباعة</div>
+        <div class="specs">
+          <div class="chip">NTAG215</div>
+          <div class="chip">Pack 50</div>
+          <div class="chip">قابل للبرمجة</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="">اطلب عبر واتساب</a>
+          <button class="btn ghost details">عرض</button>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="card">
+        <div class="img"><img src="منتج بيرجندي.png" alt="NTAG215 Pack 200"/></div>
+        <div class="title">NTAG215 — Pack 200</div>
+        <div class="meta">حزمة اقتصادية للمشاريع — استيراد مباشر وجودة مضمونة</div>
+        <div class="specs">
+          <div class="chip">Bulk</div>
+          <div class="chip">مناسبة للطباعة</div>
+          <div class="chip">NTAG215</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/9665XXXXXXXX?text=مرحبا%20أريد%20اطلب%20NTAG215%20Pack%20200">اطلب عبر واتساب</a>
+          <button class="btn ghost details">عرض</button>
+        </div>
+      </div>
+
+      <!-- Product 4 -->
+      <div class="card">
+        <div class="img"><img src="منتج ابيض.png" alt="PVC UV Pack 50"/></div>
+        <div class="title">PVC — UV Glossy Pack 50</div>
+        <div class="meta">سطح لامع محمي UV — مناسب للكروت الفاخرة والمعارض</div>
+        <div class="specs">
+          <div class="chip">لمعة UV</div>
+          <div class="chip">مقاوم للخدش</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/9665XXXXXXXX?text=مرحبا%20أريد%20اطلب%20PVC%20UV%20Pack%2050">اطلب عبر واتساب</a>
+          <button class="btn ghost details">عرض</button>
+        </div>
+      </div>
+
+      <!-- Product 5 -->
+      <div class="card">
+        <div class="img"><img src="منتج بمبي.png" alt="Inkjet PVC Pack 50"/></div>
+        <div class="title">Inkjet PVC Pack 50</div>
+        <div class="meta">مناسب للطباعة المنزلية عبر نفث الحبر — سطح قابل للامتصاص</div>
+        <div class="specs">
+          <div class="chip">Inkjet</div>
+          <div class="chip">قابل للطباعة</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="https://wa.me/9665XXXXXXXX?text=مرحبا%20أريد%20اطلب%20Inkjet%20PVC%20Pack%2050">اطلب عبر واتساب</a>
+          <button class="btn ghost details">عرض</button>
+        </div>
+      </div>
+
+      <!-- Product 6 -->
+      <div class="card">
+        <div class="img"><img src="منتج مؤسسة.png" alt="Special Card"/></div>
+        <div class="title">NTAG215 — شفاف خاص (أكريليك)</div>
+        <div class="meta">بطاقات شفافة أكريليك مع شريحة NFC — شكل فخم ومختلف</div>
+        <div class="specs">
+          <div class="chip">أكريليك</div>
+          <div class="chip">NTAG215</div>
+          <div class="chip">مظهر فخم</div>
+        </div>
+        <div class="actions">
+          <a class="btn" href="منتج بيرجندي.png">اطلب عبر واتساب</a>
+          <button class="btn ghost details">عرض</button>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+© 2025 مُـخـتـلـف | جميع الحقوق محفوظة 💎    </footer>
+  </div>
+
+  <!-- Modal (hidden by default) -->
+  <div class="modal-overlay" id="modalOverlay" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true">
+      <button class="modal-close" id="modalClose" aria-label="إغلاق">✕</button>
+      <div class="modal-img"><img id="modalImage" src="" alt="عرض البطاقة"/></div>
+    </div>
+  </div>
+
+  <script>
+    // روابط الصور حالياً مؤدية لـ placeholder. لو عندك صور حقيقية ارسلها وسأضعها مكانها.
+    // استبدل رقم الهاتف في روابط WhatsApp برقمك الفعلي بصيغة E.164 بدون صفر البداية، مثال: 9665XXXXXXXX
+
+    // عند الضغط على زر التفاصيل، افتح المودال وضع صورة البطاقة الكبيرة
+    const detailBtns = document.querySelectorAll('.details');
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+
+    detailBtns.forEach(btn=>{
+      btn.addEventListener('click', (e)=>{
+        const card = btn.closest('.card');
+        if(!card) return;
+        const img = card.querySelector('.img img');
+        if(!img) return;
+        modalImage.src = img.src;
+        modalImage.alt = img.alt || 'صورة البطاقة';
+        modalOverlay.style.display = 'flex';
+        modalOverlay.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden'; // منع التمرير خلف المودال
+      });
+    });
+
+    function closeModal(){
+      modalOverlay.style.display = 'none';
+      modalOverlay.setAttribute('aria-hidden','true');
+      modalImage.src = '';
+      document.body.style.overflow = '';
+    }
+
+    modalClose.addEventListener('click', closeModal);
+    modalOverlay.addEventListener('click', (e)=>{ if(e.target === modalOverlay) closeModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+  </script>
+</body>
+</html>
