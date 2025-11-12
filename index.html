@@ -51,7 +51,17 @@
   </style>
 </head>
 <body>
-  
+  <button class="menu-toggle" onclick="toggleMenu()">☰ القائمة</button>
+
+<div class="side-nav" id="sideNav">
+  <a href="#about">عن مختلف</a>
+  <a href="#features">المميزات</a>
+  <a href="#how">شرح كيف يعمل</a>
+  <a href="#faq">الأسئلة الشائعة</a>
+</div>
+
+<div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
   <div class="container">
     <header>
       <div class="brand">
@@ -318,6 +328,79 @@ font-family: 'Noto Kufi Arabic', sans-serif;
     font-size: 14px;
     line-height: 1.7;
   }
+  /* زر القائمة */
+.menu-toggle {
+  display: none;
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 18px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1001;
+}
+
+/* القائمة الجانبية */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 240px;
+  height: 100%;
+  background: #0b1121;
+  display: flex;
+  flex-direction: column;
+  padding-top: 60px;
+  padding-left: 20px;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.side-nav.open {
+  left: 0;
+}
+
+.side-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 14px 0;
+  font-weight: 600;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.side-nav a:hover {
+  color: var(--accent);
+}
+
+/* خلفية شفافة عند فتح القائمة */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* اظهار زر القائمة في الجوال */
+@media (max-width: 720px) {
+  .top-nav {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
+
 </style>
 <section class="for-all">
   <h2>    البطاقات    </h2>
@@ -467,6 +550,12 @@ font-family: 'Noto Kufi Arabic', sans-serif;
     modalClose.addEventListener('click', closeModal);
     modalOverlay.addEventListener('click', (e)=>{ if(e.target === modalOverlay) closeModal(); });
     document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeModal(); });
+    //
+function toggleMenu() {
+  document.getElementById('sideNav').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('active');
+}
+
   </script>
 </body>
 </html>
