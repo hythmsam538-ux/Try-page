@@ -50,7 +50,19 @@ header {
   color: #021226;
 }
 
+.nav-logo img {
+  width: 250px;   /* الحجم الافتراضي على الكمبيوتر */
+  height: auto;
+  object-fit: contain;
+}
 
+/* على الجوال */
+@media (max-width: 768px) {
+  .nav-logo img {
+    width: 200px !important;  /* الحجم على الجوال */
+    height: auto !important;
+  }
+}
 
 h1 {
   margin: 0;
@@ -588,5 +600,6 @@ font-size: 32px;
   color: #ffffff !important; /* X تتحول للأحمر */
   transform: scale(1.1);
 }
+
 
 
