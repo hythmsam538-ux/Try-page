@@ -84,27 +84,19 @@ p.lead {
 
 .card {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-  padding: 10px;
+  padding: 14px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.03);
   position: relative;
 }
 
-/* تحسين العرض على الجوال */
-@media (max-width: 600px) {
-  .product-img {
-    width: 100%;
-    height: auto;
-    object-fit: contain; /* تخلي الصورة كاملة وواضحة */
-  }
 
 .img {
   height: 220px;
-    width: 100%;          /* تاخد كل عرض الكارد */
 
   border-radius: 0px;
   background: #fff;
-  display: block;
+  display: flex;
   align-items: center;
   justify-content: center;
   color: #111;
@@ -610,6 +602,7 @@ font-size: 32px;
   color: #ffffff !important; /* X تتحول للأحمر */
   transform: scale(1.1);
 }
+
 
 
 
