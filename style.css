@@ -602,6 +602,25 @@ font-size: 32px;
   color: #ffffff !important; /* X تتحول للأحمر */
   transform: scale(1.1);
 }
+/* قسم روابط السوشيال */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.social-links a {
+  color: #fff;
+  font-size: 28px;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #00bcd4; /* لون متدرج جميل عند المرور */
+  transform: scale(1.2);
+}
+
 
 
 
