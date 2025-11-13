@@ -136,12 +136,15 @@ p.lead {
 }
 @media (max-width: 600px) {
   .img {
-    height: 200px;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 👈 يخليها مربعة على الجوال */
+    height: auto !important; /* نلغي أي ارتفاع ثابت */
   }
-  .img img {
-    width: 60%;
-        height: 100%;
 
+  .img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* عشان الصورة تملى المربع بدون تشوه */
   }
 }
 
@@ -818,6 +821,7 @@ font-size: 32px;
   margin-bottom: 40px;
   letter-spacing: 1px;
 }*/
+
 
 
 
