@@ -648,7 +648,7 @@ font-size: 32px;
 
 .menu-social a {
   color: #fff;
-  font-size: 22px;
+  font-size: 29px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -656,6 +656,7 @@ font-size: 32px;
   color: var(--accent);
   transform: scale(1.2);
 }
+
 
 
 
