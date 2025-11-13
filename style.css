@@ -324,7 +324,7 @@ footer {
 
 .features-intro h2 {
   font-family: 'Noto Kufi Arabic', sans-serif;
-  font-size: 50px;
+  font-size: 35px;
   font-weight: 800;
   background: linear-gradient(90deg, var(--accent2), var(--accent));
   -webkit-background-clip: text;
@@ -821,6 +821,7 @@ font-size: 32px;
   margin-bottom: 40px;
   letter-spacing: 1px;
 }*/
+
 
 
 
