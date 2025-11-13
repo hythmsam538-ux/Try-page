@@ -6,11 +6,16 @@
   <title>    مُـخـتـلـف | هويتك الذكية </title>
   <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- أضف هذا في <head> -->
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 </head>
+
 <body>
 <!-- شريط علوي ثابت -->
 <header class="top-bar">
+    
   <!-- زر القائمة للجوال -->
   <button class="menu-toggle" onclick="toggleMenu()">☰</button>
 
@@ -26,10 +31,33 @@
   <div class="nav-logo">
     <img src="logo-removebg-preview.png" alt="شعار الموقع" />
   </div>
+
 </header>
+<!-- ===== HERO SECTION ===== -->
+<section class="hero" id="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>مُـخـتـلـف | هويتك الذكية
+</h1>
+    <p class="hero-desc">
+      اصنع انطباعًا أول يدوم، وشارك هويتك بسهولة وأناقة مع بطاقة ذكية تمثل أسلوبك.
+      اجعل كل لقاء فرصة لترك أثر، وعرّف الناس بك بطريقة عصرية تعكس احترافيتك وثقتك بنفسك.
+      <strong>بطاقة واحدة... تعرّف العالم على تفرّدك.</strong>
+    </p>
+    <div class="hero-cta">
+      <a href="https://wa.me/966547856086" class="hero-btn">ابدأ تميزك الآن</a>
+<a href="#cards" class="hero-btn ghost">البطاقات</a>
+    </div>
+  </div>
+</section>
+<!-- ===== end HERO ===== -->
+
 
 <!-- القائمة الجانبية للجوال -->
+ 
+
 <div class="side-nav" id="sideNav">
+
   <a href="features.html" onclick="closeMenu()">المميزات</a>
   <a href="shr7.html" onclick="closeMenu()">شرح  كيف يعمل</a>
   <a href="about.html" onclick="closeMenu()">حول مختلف</a>
@@ -55,19 +83,10 @@
 <div class="overlay" id="overlay" onclick="closeMenu()"></div>
 
   <div class="container">
-    <header>
-      <div class="brand">
-        <div>
-          <h1> مُـخـتـلـف | هويتك الذكية </h1>
-          <p class="lead">مش مجرد كارت ... 
-             لأنك مميز  صُممت هويتنا ،
- اترك انطباع أول يدوم و غير طريقة  تعريفك  بنفسك </p>
-        </div>
-      
-    </header>
+   
 
 <section class="features-intro">
-  <h2> مميزاتنا </h2>
+  <h2 data-aos="fade-up"> مميزاتنا </h2>
 </section>
 
 <section class="intro-cards">
@@ -97,7 +116,7 @@
 </section>
 
 <section class="for-all">
-  <h2> يتناسب مع كل من يسعى للتميّز بخطوة ذكية</h2>
+  <h2 data-aos="fade-up"> يتناسب مع كل من يسعى للتميّز بخطوة ذكية</h2>
   <div class="grid">
     <div class="card">
       <div class="icon">👤</div>
@@ -162,8 +181,10 @@
   </div>
 </section>
 -->
-<section class="for-all">
-  <h2>    البطاقات    </h2>
+
+
+<section id="cards" class="for-all">
+  <h2 data-aos="fade-up">    البطاقات    </h2>
     <section class="grid">
 
       <!-- Product 1 -->
@@ -287,11 +308,15 @@
       <div class="modal-img"><img id="modalImage" src="" alt="عرض البطاقة"/></div>
     </div>
   </div>
-
+  <!-- زر الرجوع للأعلى -->
+<button id="backToTop" title="الرجوع للأعلى">↑</button>
   <script src="script.js"></script>
+
+
+
+
 </body>
 </html>
-
 
 
 
