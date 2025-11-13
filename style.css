@@ -621,6 +621,27 @@ font-size: 32px;
   transform: scale(1.2);
 }
 
+/* أيقونات السوشيال ميديا أسفل القائمة */
+.menu-social {
+  margin-top: auto;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.menu-social a {
+  color: #fff;
+  font-size: 22px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.menu-social a:hover {
+  color: var(--accent);
+  transform: scale(1.2);
+}
+
 
 
 
