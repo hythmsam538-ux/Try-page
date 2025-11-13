@@ -503,7 +503,7 @@ footer {
 .side-nav a {
   color: #fff;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 22px;
   font-weight: 600;
   transition: color 0.3s ease;
 }
@@ -648,7 +648,7 @@ font-size: 32px;
 
 .menu-social a {
   color: #fff;
-  font-size: 29px;
+  font-size: 30px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -656,6 +656,7 @@ font-size: 32px;
   color: var(--accent);
   transform: scale(1.2);
 }
+
 
 
 
