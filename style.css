@@ -125,6 +125,8 @@ p.lead {
 
   }
 }
+
+
 .title {
   font-weight: 800;
   color: #e6eef8;
@@ -636,6 +638,7 @@ font-size: 32px;
   transform: scale(1.2);
 }
 
+
 /* أيقونات السوشيال ميديا أسفل القائمة */
 .menu-social {
   margin-top: auto;
@@ -657,38 +660,28 @@ font-size: 32px;
   transform: scale(1.2);
 }
 
+
 .price-box {
   display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 12px;
-  margin-top: 8px;
+  flex-direction: column; /* يخليهم تحت بعض */
+  align-items: center;
+  margin-top: 10px;
+  gap: 4px;
 }
 
 .new-price {
-  font-size: 22px;
-  font-weight: 800;
-  background: linear-gradient(90deg, #00e0ff, #8a2be2);
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #00e0ff, #a37bff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+  text-shadow: 0 0 6px rgba(0, 224, 255, 0.3);
 }
 
 .old-price {
-  font-size: 15px;
-  color: #9aa7b6;
+  font-size: 0.9rem;
+  color: #999;
   text-decoration: line-through;
-  opacity: 0.8;
-  position: relative;
-  top: 2px;
+  opacity: 0.7;
 }
-
-
-
-
-
-
-
-
-
 
