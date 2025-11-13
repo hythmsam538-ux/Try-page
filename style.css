@@ -657,6 +657,33 @@ font-size: 32px;
   transform: scale(1.2);
 }
 
+.price-box {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.new-price {
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #00e0ff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(0, 224, 255, 0.4);
+}
+
+.old-price {
+  font-size: 15px;
+  color: #9aa7b6;
+  text-decoration: line-through;
+  opacity: 0.8;
+  position: relative;
+  top: 2px;
+}
+
+
 
 
 
